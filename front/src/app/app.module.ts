@@ -16,6 +16,8 @@ import { UserService } from './service/users.service';
 import { FilterPipe } from './filter.pipe';
 import { UserComponent } from './user/user.component';
 import { Authuserguard } from "app/guards/authuser.guard";
+import { EditComponent } from './edit/edit.component';
+import { HeaderComponent } from './header/header.component';
 
 
 
@@ -28,6 +30,8 @@ import { Authuserguard } from "app/guards/authuser.guard";
     HomepageComponent,
     FilterPipe,
     UserComponent,
+    EditComponent,
+    HeaderComponent,
 
 
      

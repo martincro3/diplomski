@@ -14,10 +14,11 @@ export class AppComponent implements OnInit {
   state: string  = 'small'
   authService: any;
   signupForm : FormGroup;
-  title = 'Dobrodošli na posao.hr!';
+  
   
   
   ngOnInit() {}
+
 
   
 }

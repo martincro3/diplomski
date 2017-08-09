@@ -1,0 +1,14 @@
+<p><b>Osobna zabiljeska:</b> </p>
+
+<div *ngIf="editing">
+  <input type="text">
+</div>
+
+<div *ngIf="!editing">
+ {{note}} 
+  
+</div>
+
+<button (click)="toggleEdit()">
+        {{ editing ? 'Done' : 'Edit' }}
+</button>

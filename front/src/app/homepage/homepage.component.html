@@ -1,28 +1,16 @@
-  <div class="container">
-    <div class="row">
-      <div> 
-        <ul class="nav nav-tabs">
-          <li role="presentation" (click)="getUser()"><a> {{user}}</a></li>
-          <li *ngIf ="!user" role="presentation" 
-          routerLink="login" 
-          routerLinkActive="activate"
-          [routerLinkActiveOptions]="{exact: true}">
-          <a routerLink="login">Login</a></li>
-          <li *ngIf ="!user" role="presentation" 
-           routerLink="signup"
-           routerLinkActivate="activate">
-           <a routerLink="signup">SignUp</a>
-           </li>
-            <li *ngIf ="user" role="presentation" >
-            <a (click)="onLogout()">Logout</a></li>
-        </ul>
-        <div class="row">
-      <router-outlet></router-outlet>
-        </div>
+<div>
+      <app-header></app-header>
+      <div class="row">
+        
       </div>
-    </div>
-  </div>
+    
+</div>
 
-  <div class="col-xs-12 col-sm-12 col-md-8 col-sm-offset-2 col-md-offset-2">
-<h1>{{user}} dobrodošli u Diplomski rad </h1>
-  </div>
+<div class="col-xs-12 col-sm-12 col-md-8 col-sm-offset-2 col-md-offset-2">
+  <h1>{{user|uppercase}} dobrodošli u Diplomski rad </h1>
+  
+
+  <app-edit *ngIf="user" [note]="note"></app-edit>
+
+
+</div>

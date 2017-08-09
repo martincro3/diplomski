@@ -50,5 +50,15 @@ export class SigninComponent implements OnInit
                   );                    
     }
 
+    onLogout() {
+
+  localStorage.removeItem("user");
+  localStorage.removeItem("token");
+  localStorage.removeItem("isAdmin");
+  localStorage.removeItem("note");
+  this.router.navigate(['/login']); 
+    
+}
+
 }
 

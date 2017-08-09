@@ -20,7 +20,7 @@ module.exports = {
           .then(() => {
             return res.send(
               {
-                isAdmin: user.admin, username: user.username, note:user.note, token: JwtService.issue({ id: user.id })
+                isAdmin: user.admin, username: user.username,note:user.note, token: JwtService.issue({ id: user.id })
               })
           })
           .catch((err) => {

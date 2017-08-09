@@ -42,9 +42,10 @@ module.exports = {
       type: 'boolean',
       defaultsTo: false
     },
-    note: {
-      type:'string',
-      defaultsTo: "Nota nije još postavljena"
+
+    note:{
+      type:"string",
+      defaultsTo:"Nema note za korisnika."
     },
 
     toJSON: function () {

@@ -31,11 +31,15 @@ export class AdminComponent implements OnInit {
 
   ngOnInit() {
     this.user = localStorage.getItem('user');
+    console.log(localStorage.token)
+    console.log(localStorage.note)
   }
 
   OnLogout() {
     localStorage.removeItem('user');
     localStorage.removeItem("token");
+    localStorage.removeItem("isAdmin");
+    localStorage.removeItem("note");
     this.router.navigate(['']); 
     this.isLoggedIn = false;  
   }
