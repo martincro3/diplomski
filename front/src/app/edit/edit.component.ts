@@ -11,23 +11,32 @@ export class EditComponent implements OnChanges {
   editing: boolean = false;
   
   
+  
 
 
   constructor(private authenservice: AuthenService) { }
 
   @Input() note
 
-  ngOnChanges(changes) {
+  // @Output()
+  // spremanjeEdita: EventEmitter<note>=new EventEmitter<note>();
 
-    if (changes.user){
+  ngOnChanges() {
 
-    }
+    // if (changes.note){
+    //   this.note = Object.assign({}, changes.note.currentValue);
+
+    // }
 
   }
 
   toggleEdit() {
     
     this.editing = !this.editing;
+  }
+  onNoteChange(value: string){
+    console.log('Value:', value);
+    this.note = value;
   }
 
   

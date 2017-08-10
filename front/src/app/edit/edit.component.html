@@ -1,14 +1,25 @@
-<p><b>Osobna zabiljeska:</b> </p>
+<div class="editNote">
 
-<div *ngIf="editing">
-  <input type="text">
-</div>
+  <p><b>Osobna zabiljeska:</b> </p>
 
-<div *ngIf="!editing">
- {{note}} 
+  <div *ngIf="editing">
+
+    <input 
+    type="text" 
+    size="50" 
+    [value]="note" 
+    (input)="onNoteChange(ni.value)"
+    #ni> 
   
-</div>
+  </div>
 
-<button (click)="toggleEdit()">
+  <div *ngIf="!editing">
+    {{note}}
+
+  </div>
+
+  <button (click)="toggleEdit()">
         {{ editing ? 'Done' : 'Edit' }}
-</button>
+  </button>
+
+</div>
