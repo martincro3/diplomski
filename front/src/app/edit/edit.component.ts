@@ -1,5 +1,5 @@
 import { Component, OnChanges, Input, Output, EventEmitter } from '@angular/core';
-import {AuthenService} from '../service/index';
+import { AuthenService } from '../service/index';
 
 @Component({
   selector: 'app-edit',
@@ -9,17 +9,17 @@ import {AuthenService} from '../service/index';
 export class EditComponent implements OnChanges {
 
   editing: boolean = false;
-  
-  
-  
+
+
+
 
 
   constructor(private authenservice: AuthenService) { }
 
   @Input() note
-
-  // @Output()
-  // spremanjeEdita: EventEmitter<note>=new EventEmitter<note>();
+  
+  @Output()
+  spremanjeEdita: EventEmitter<any>=new EventEmitter();
 
   ngOnChanges() {
 
@@ -31,14 +31,20 @@ export class EditComponent implements OnChanges {
   }
 
   toggleEdit() {
-    
+    if (this.editing){
+      this.spremanjeEdita.emit(this.note);
+      if (this.spremanjeEdita.emit){
+        console.log("note lokalno promjenjen")
+      }
+    }
     this.editing = !this.editing;
   }
-  onNoteChange(value: string){
+
+  onNoteChange(value: string) {
     console.log('Value:', value);
     this.note = value;
   }
 
-  
+
 
 }

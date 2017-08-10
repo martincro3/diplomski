@@ -21,6 +21,7 @@ export class HomepageComponent implements OnInit {
   
   ngOnInit() {
     this.user = localStorage.getItem("user");
+    console.log("NOTE KORISNIKA: " + this.note)
     
   }
   
@@ -38,5 +39,12 @@ export class HomepageComponent implements OnInit {
     this._router.navigate(["user"]);
    
   } 
+
+  handleSpremanjeNote(event){
+    console.log (event);
+    this.note=event;
+    localStorage.setItem('note', (this.note));
+    
+  }
 
 }
