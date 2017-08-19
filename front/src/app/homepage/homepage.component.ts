@@ -13,10 +13,12 @@ export class HomepageComponent implements OnInit {
 
   constructor(private _router: Router,
               private _http: Http,
-              private _userservice: UserService,
+              private userservice: UserService,
               private authenservice: AuthenService) { }
   user:any;
   note = localStorage.note;
+  result:any;
+  response:any;
   
   
   ngOnInit() {
@@ -44,6 +46,9 @@ export class HomepageComponent implements OnInit {
     console.log (event);
     this.note=event;
     localStorage.setItem('note', (this.note));
+
+    this.userservice.spremanjeNote(this.user, this.note)                   
+        .subscribe(result => this.result = console.log(this.response)) 
     
   }
 

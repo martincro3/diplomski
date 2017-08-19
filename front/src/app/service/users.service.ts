@@ -50,6 +50,15 @@ import { Router } from "@angular/router";
         return this.http.put('http://localhost:1337/api/user/editUser',form, options).map((res: Response) => res.json())
 
     }
+
+    spremanjeNote(user,note){
+         return this.http.put('http://localhost:1337/api/saveNote', { user, note })
+            .map((response: Response) => {
+                localStorage.setItem('note', (response.json().note));
+            })
+
+}
+
 }
     
     

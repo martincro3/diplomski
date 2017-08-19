@@ -7,6 +7,19 @@
 
 
 module.exports = {
+  
+  
+  saveNote: function (req, res) {
+    
+     const data = req.allParams;
+     User.findOne({ username: data.username })
+     .then((user) => {
+        user.note=data.note
+        }
+     
+     )
+
+  },
 
   login: function (req, res) {
     const data = req.body;

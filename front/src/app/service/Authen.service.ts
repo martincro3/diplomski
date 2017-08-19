@@ -30,8 +30,6 @@ export class AuthenService {
                     this.isAdmin = response.json().isAdmin
                     this.note = response.json().note
                     this.router.navigate(['/admin'])
-
-
                 }
 
                 else if (response.json().token && response.json().isAdmin === false) {
