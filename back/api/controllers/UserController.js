@@ -10,15 +10,17 @@ module.exports = {
   
   
   saveNote: function (req, res) {
-    
-     const data = req.allParams;
-     User.findOne({ username: data.username })
-     .then((user) => {
-        user.note=data.note
-        }
-     
-     )
 
+    const data = req.allParams();
+
+    User.update({ id: req.token.id }, { note: data.note })
+      .exec(function (err, updatedUser) {
+        if (err) return res.negotiate();
+        if (!updatedUser) return res.notFound('User not found!');
+
+        // Return the updated user
+        return res.json(updatedUser);
+      })
   },
 
   login: function (req, res) {

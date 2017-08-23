@@ -45,7 +45,7 @@ export class SigninComponent implements OnInit
   login() {
          this.loading = true;
          this.authenservice.login(this.model.username, this.model.password)
-           .subscribe(result => this.result = console.log(this.response) ,            
+           .subscribe(result => this.result = console.log(result) ,            
                       err => this.errorMessage = err               
                   );                    
     }

@@ -1,7 +1,12 @@
-<div *ngIf="user">
+<div>
+      <app-header></app-header>
+      
+</div>
+<div class="editUser" *ngIf="user">
     <form [formGroup]="rForm" (ngSubmit)="editUser(rForm.value)">
-        <label>Username:</label><input type="text" formControlName="username" [(ngModel)]="user.username">
-        <label>Emajl:</label><input type="text" formControlName="email"[(ngModel)]="user.email">
+        <p><label>username:</label><br><input type="text" formControlName="username" [(ngModel)]="user.username"></p>
+        <p><label>e-mail:</label><br><input type="text" formControlName="email"[(ngModel)]="user.email"></p>
+        <br>
         <button type="submit">Save Changes</button>
     </form>
  </div>

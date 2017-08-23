@@ -23,6 +23,10 @@ export class HeaderComponent implements OnChanges {
     
 
   }
+  getUser(){
+    this.router.navigate(["user"]);
+   
+  }
 
   onLogout() {
 

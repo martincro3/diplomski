@@ -4,5 +4,6 @@ export class User {
     password: string;
     email: string;
     isAdmin: boolean;    
+    note:string;
   
 }

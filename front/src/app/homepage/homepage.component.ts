@@ -41,14 +41,13 @@ export class HomepageComponent implements OnInit {
     this._router.navigate(["user"]);
    
   } 
-
   handleSpremanjeNote(event){
     console.log (event);
     this.note=event;
-    localStorage.setItem('note', (this.note));
+    // localStorage.setItem('note', (this.note));
 
     this.userservice.spremanjeNote(this.user, this.note)                   
-        .subscribe(result => this.result = console.log(this.response)) 
+        .subscribe(result => this.result = console.log(result)) 
     
   }
 
