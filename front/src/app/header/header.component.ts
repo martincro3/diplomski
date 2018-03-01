@@ -18,6 +18,7 @@ export class HeaderComponent implements OnChanges {
   ) { }
 
   user = localStorage.getItem('user')
+  admin = localStorage.getItem('isAdmin')
   
   ngOnChanges() {
     

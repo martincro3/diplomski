@@ -1,9 +1,8 @@
-.container{
-    background-color:orange;
-}
+
 
 .orange{
-    
-    background-color:orange;
-    height:100%;
+    margin:15px;
+    border-radius:20px;
+    background: linear-gradient(orange, black);
+    min-height:100%;
 }
